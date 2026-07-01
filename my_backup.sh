@@ -16,7 +16,7 @@ done
 echo "First backup at $(date)" >> backup_$DATE/data_1.txt
 chmod 644 backup_$DATE/data_1.txt
 FILE_COUNT=$(ls -1 "backup_$DATE"/*.txt | wc -l)
-echo "Backup completed. Files created: $FILE_COUNT"
+echo "Backup completed :3. Files created: $FILE_COUNT"
 if check_internet;then
 send_telegram "бэкап готов в $DATE, создано файлов $FILE_COUNT"
 else
