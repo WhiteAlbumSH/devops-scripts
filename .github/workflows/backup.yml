@@ -1,0 +1,19 @@
+name: Backup Script CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x my_backup.sh
+
+      - name: Run backup script
+        run: ./my_backup.sh 5
