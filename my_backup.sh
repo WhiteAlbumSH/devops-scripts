@@ -1,4 +1,5 @@
 #!/bin/bash
+crontab -e
 TOKEN="8948303678:AAGLDOnnlFqx8TEg6L5kwb0JGaBs4VLOEyM"
 CHAT_ID="1055313277"
 URL="https://api.telegram.org/bot$TOKEN/sendMessage"
@@ -22,3 +23,4 @@ send_telegram "бэкап готов в $DATE, создано файлов $FILE
 else
 echo "нет интернет соединения" >> error.log
 fi
+43 20 * * * /usr/bin/docker run --rm --network host backup-bot >> /home/devuser/backup.log 2>&1
